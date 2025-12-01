@@ -1,0 +1,15 @@
+from google.adk.agents.llm_agent import Agent
+from google.adk.models.google_llm import Gemini
+
+from language_companion import prompt
+from language_companion.shared_libraries import types, utils
+
+vocabulary_agent = Agent(
+    name='vocabulary_agent',
+    model=Gemini(
+        model="gemini-2.5-flash-lite",
+        retry_options=utils.retry_config
+    ),
+    description=prompt.ROOT_AGENT_DESC,
+    instruction=prompt.ROOT_AGENT_INSTR,
+)
