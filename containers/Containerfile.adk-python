@@ -1,0 +1,16 @@
+FROM docker.io/python:3.14.0-slim-trixie
+# FROM docker.io/python:3.10.19-slim-trixie
+
+RUN apt-get update
+
+# Create virtual environment with ADK dependencies
+RUN python3 -m venv /adk/venv
+ENV PATH="/adk/venv/bin:$PATH"
+
+# Install ADK build tools
+RUN pip install --upgrade pip && \
+  pip install google-adk
+
+WORKDIR /app
+
+EXPOSE 8000
