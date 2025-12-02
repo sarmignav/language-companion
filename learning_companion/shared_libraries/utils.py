@@ -11,4 +11,4 @@ retry_config=types.HttpRetryOptions(
 )
 
 def init_state(callback_context: CallbackContext):
-    callback_context.state.update({ 'target_language': 'Spanish' })
+    callback_context.state.update({ 'target_language': 'Spanish', 'source_language': 'Chinese' })
