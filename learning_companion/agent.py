@@ -1,8 +1,5 @@
-# import sqlite3
-
 from google.adk.agents.llm_agent import Agent
 from google.adk.models.google_llm import Gemini
-from google.adk.runners import Runner
 from google.adk.tools import google_search, AgentTool, ToolContext
 
 from learning_companion import prompt
@@ -12,6 +9,7 @@ from learning_companion.sub_agents.breakdown.agent import breakdown_agent
 from learning_companion.sub_agents.explainer.agent import explainer_agent
 from learning_companion.sub_agents.patterns.agent import patterns_agent
 from learning_companion.sub_agents.vocabulary.agent import vocabulary_agent
+from learning_companion.sub_agents.quiz_creator.agent import quiz_creator_agent
 
 # root_agent = explainer_agent
 root_agent = Agent(
@@ -28,5 +26,7 @@ root_agent = Agent(
       AgentTool(patterns_agent),
       AgentTool(vocabulary_agent),
     ],
-    # before_agent_callback=utils.init_state,
+    sub_agents=[
+        quiz_creator_agent,
+    ]
 )

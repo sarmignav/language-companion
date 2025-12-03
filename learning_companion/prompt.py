@@ -30,6 +30,7 @@ Here is a list of the tools at your disposal:
  - To identify the most difficult parts using `explainer_agent`.
  - Identify common language patterns with 'patterns_agent'.
  - Identify important words, both in terms of language relevance or in terms of frequency with 'vocabulary_agent'
+ - Use `quiz_creator_agent` to create quizzes.
 
 ## Rules
 
